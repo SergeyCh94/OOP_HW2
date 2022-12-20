@@ -1,6 +1,10 @@
 package transport;
 
 
+import java.time.LocalDate;
+
+import java.util.Objects;
+
 public class Car {
     final String brand;
     final String model;
@@ -116,6 +120,51 @@ public class Car {
             return keylessAccess;
         }
     }
+
+    public class Insurance {
+        private final LocalDate validityPeriod;
+        private final double cost;
+        private final String number;
+
+        public Insurance(LocalDate validityPeriod, double cost, String number) {
+            this.validityPeriod = Objects.requireNonNullElseGet(validityPeriod, LocalDate::now);
+            if (cost >= 0) {
+                this.cost = cost;
+            } else {
+                this.cost = 0;
+            }
+            if (number == null || number.isEmpty()) {
+                this.number = "default";
+            } else {
+                this.number = number;
+            }
+        }
+
+        public void checkExpirationDate() {
+            if (validityPeriod.isBefore(LocalDate.now().minusDays(365))) {
+                System.out.println("Нужно менять страховку");
+            }
+        }
+
+        public void checkNumber() {
+            if (number.length() != 9) {
+                System.out.println("Неверный номер");
+            }
+        }
+
+        public LocalDate getValidityPeriod() {
+            return validityPeriod;
+        }
+
+        public double getCost() {
+            return cost;
+        }
+
+        public String getNumber() {
+            return number;
+        }
+    }
+
 
     public String getBrand() {
         return brand;

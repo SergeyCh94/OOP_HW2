@@ -1,5 +1,7 @@
 import transport.Car;
 
+import java.time.LocalDate;
+
 public class Main {
     public static void main(String[] args) {
         Car ladaCar = new Car("Lada", "Granta", 1.7, "Желтый", 2015, "Россия", "Автомат", "Седан",
@@ -20,7 +22,6 @@ public class Main {
         System.out.println(hyundaiCar);
         ladaCar.changeTiers(9);
         System.out.println(ladaCar);
-
 
     }
 }
