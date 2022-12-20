@@ -20,5 +20,7 @@ public class Main {
         System.out.println(hyundaiCar);
         ladaCar.changeTiers(9);
         System.out.println(ladaCar);
+
+
     }
 }
