@@ -6,16 +6,16 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 public class Car {
-    final String brand;
-    final String model;
+    private final String brand;
+    private final String model;
     private double engineVolume;
     private String color;
-    final int year;
-    final String country;
+    private final int year;
+    private final String country;
     private String transmission;
-    final String bodyType;
+    private final String bodyType;
     private String registrationNumber;
-    final int numberOfSeats;
+    private final int numberOfSeats;
     private boolean summerTiers;
 
 
